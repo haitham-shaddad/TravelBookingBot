@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelBookingBot", "TravelBookingBot\TravelBookingBot.csproj", "{2BA29933-3459-4D16-A844-510E061FB885}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QnADemoBot", "QnADemoBot\QnADemoBot.csproj", "{6DD7913B-61E8-454F-9E4E-7D03BD738001}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2BA29933-3459-4D16-A844-510E061FB885}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BA29933-3459-4D16-A844-510E061FB885}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BA29933-3459-4D16-A844-510E061FB885}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BA29933-3459-4D16-A844-510E061FB885}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DD7913B-61E8-454F-9E4E-7D03BD738001}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DD7913B-61E8-454F-9E4E-7D03BD738001}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DD7913B-61E8-454F-9E4E-7D03BD738001}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DD7913B-61E8-454F-9E4E-7D03BD738001}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {51360768-B931-4F64-88D9-1899A9CB7216}
+	EndGlobalSection
+EndGlobal
