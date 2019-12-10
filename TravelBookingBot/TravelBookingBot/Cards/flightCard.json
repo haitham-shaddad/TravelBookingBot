@@ -1,4 +1,4 @@
-{
+ï»¿{
   "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
   "version": "1.0",
   "type": "AdaptiveCard",
@@ -32,7 +32,7 @@
     },
     {
       "type": "TextBlock",
-      "text": "{{DATE({Segments[0].DepartureDateTime}, SHORT)}} {{TIME({Segments[0].DepartureDateTime})}}",
+      "text": "{{DATE({Segments[0].DepartureDateTime})}} {{TIME({Segments[0].DepartureDateTime})}}",
       "weight": "Bolder",
       "spacing": "None"
     },
@@ -80,7 +80,7 @@
           "items": [
             {
               "type": "TextBlock",
-              "text": " "
+              "text": "Â "
             },
             {
               "type": "Image",
@@ -138,7 +138,7 @@
     },
     {
       "type": "TextBlock",
-      "text": "{{DATE({Segments[1].ArrivalDateTime}, SHORT)}} {{TIME({Segments[1].ArrivalDateTime})}}",
+      "text": "{{DATE({Segments[1].ArrivalDateTime})}} {{TIME({Segments[1].ArrivalDateTime})}}",
       "weight": "Bolder",
       "spacing": "None"
     },
@@ -186,7 +186,7 @@
           "items": [
             {
               "type": "TextBlock",
-              "text": " "
+              "text": "Â "
             },
             {
               "type": "Image",

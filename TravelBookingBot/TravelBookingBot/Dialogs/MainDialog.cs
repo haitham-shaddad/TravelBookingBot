@@ -153,20 +153,29 @@ namespace TravelBookingBot.Dialogs
                 var model = new FlightitineraryModel
                 {
                     Places = new Cards.Place[] {
-                        new Cards.Place { Name = result.Origin ,Code=result.Origin},
-                        new Cards.Place { Name = result.Destination ,Code=result.Destination}
+                        new Cards.Place { Name = result.Origin ,Code=result.Origin,Id=13554,Type = "Airport"},
+                        new Cards.Place { Name = result.Destination ,Code=result.Destination,Id=11235,Type = "Airport"}
                     },
                     Segments = new Segment[]
                     {
-                        new Segment{Id = 1, DepartureDateTime = DateTime.Parse(result.TravelDate)},
-                        new Segment{Id = 2,DepartureDateTime = DateTime.Parse(result.TravelDate)}
+                        new Segment{Id = 1,ArrivalDateTime =DateTime.Parse(result.TravelDate),  DepartureDateTime = DateTime.Parse(result.TravelDate),OriginStation=13554, DestinationStation  =11235 },
+                        new Segment{Id = 2,ArrivalDateTime =DateTime.Parse(result.TravelDate),  DepartureDateTime = DateTime.Parse(result.TravelDate),OriginStation=11235, DestinationStation  =13554}
                     },
                     Query = new Query
                     {
-                        DestinationPlace = result.Destination,
-                        OriginPlace = result.Origin,
+                        DestinationPlace = "11235",
+                        OriginPlace = "13554",
                         InboundDate = result.TravelDate,
-                        OutboundDate = result.TravelDate
+                        OutboundDate = result.TravelDate,
+                        LocationSchema = "Default",
+                        CabinClass = "Economy",
+                        GroupPricing = false,
+                        Country = "GB",
+                        Currency = "GBP",
+                        Locale = "en-gb",
+                        Adults = 3,
+                        Children = 0,
+                        Infants = 0,
                     },
                     BookingOptions = new Bookingoption[]
                     {
@@ -176,7 +185,7 @@ namespace TravelBookingBot.Dialogs
                             {
                                 new Bookingitem
                                 {
-                                    Price = new Random().Next(),SegmentIds =new int[]{1,2}
+                                    Price = new Random().Next(200,5000),SegmentIds =new int[]{1,2}
                                 }
                             }
                         }
@@ -206,100 +215,21 @@ namespace TravelBookingBot.Dialogs
                     using (var reader = new StreamReader(stream))
                     {
                         var adaptiveCardTempalte = reader.ReadToEnd();
+                        JsonSerializerSettings microsoftDateFormatSettings = new JsonSerializerSettings
+                        {
+                            DateFormatHandling = DateFormatHandling.IsoDateFormat,
+                            DateTimeZoneHandling = DateTimeZoneHandling.Utc
+                        };
+                        var dataJson = JsonConvert.SerializeObject(data, microsoftDateFormatSettings);
 
-                        var dataJson = JsonConvert.SerializeObject(data);
-                        //dataJson = @"{
-                        //                ""Segments"": [
-                        //                {
-                        //                    ""Id"": 1,
-                        //                    ""OriginStation"": 11235,
-                        //                    ""DestinationStation"": 13554,
-                        //                    ""DepartureDateTime"": ""2017-05-30T19:25:00Z"",
-                        //                    ""ArrivalDateTime"": ""2017-05-30T20:55:00Z"",
-                        //                    ""Carrier"": 881,
-                        //                    ""OperatingCarrier"": 881,
-                        //                    ""Duration"": 90,
-                        //                    ""FlightNumber"": ""1463"",
-                        //                    ""JourneyMode"": ""Flight"",
-                        //                    ""Directionality"": ""Outbound""
-                        //                },
-                        //                {
-                        //                    ""Id"": 2,
-                        //                    ""OriginStation"": 13554,
-                        //                    ""DestinationStation"": 11235,
-                        //                    ""DepartureDateTime"": ""2017-06-02T19:25:00Z"",
-                        //                    ""ArrivalDateTime"": ""2017-06-02T20:55:00Z"",
-                        //                    ""Carrier"": 881,
-                        //                    ""OperatingCarrier"": 881,
-                        //                    ""Duration"": 90,
-                        //                    ""FlightNumber"": ""1463"",
-                        //                    ""JourneyMode"": ""Flight"",
-                        //                    ""Directionality"": ""Inbound""
-                        //                }
-                        //                ],
-                        //                ""BookingOptions"": [
-                        //                {
-                        //                    ""BookingItems"": [
-                        //                    {
-                        //                        ""AgentID"": 4499211,
-                        //                        ""Status"": ""Current"",
-                        //                        ""Price"": 4032.54,
-                        //                        ""Deeplink"": ""http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=jzj5DawL5[...]"",
-                        //                        ""SegmentIds"": [
-                        //                        1,
-                        //                        2
-                        //                        ]
-                        //                }
-                        //                    ]
-                        //                }
-                        //                ],
-                        //                ""Places"": [
-                        //                {
-                        //                    ""Id"": 13554,
-                        //                    ""ParentId"": 4698,
-                        //                    ""Code"": ""SFO"",
-                        //                    ""Type"": ""Airport"",
-                        //                    ""Name"": ""San Francisco""
-                        //                },
-                        //                {
-                        //                    ""Id"": 13558,
-                        //                    ""ParentId"": 5796,
-                        //                    ""Code"": ""AMS"",
-                        //                    ""Type"": ""Airport"",
-                        //                    ""Name"": ""Amsterdam""
-                        //                }
-                        //                ],
-                        //                ""Carriers"": [
-                        //                {
-                        //                    ""Id"": 881,
-                        //                    ""Code"": ""BA"",
-                        //                    ""Name"": ""British Airways"",
-                        //                    ""ImageUrl"": ""http://s1.apideeplink.com/images/airlines/BA.png""
-                        //                }
-                        //                ],
-                        //                ""Query"": {
-                        //                ""Country"": ""GB"",
-                        //                ""Currency"": ""GBP"",
-                        //                ""Locale"": ""en-gb"",
-                        //                ""Adults"": 3,
-                        //                ""Children"": 0,
-                        //                ""Infants"": 0,
-                        //                ""OriginPlace"": ""2343"",
-                        //                ""DestinationPlace"": ""13554"",
-                        //                ""OutboundDate"": ""2017-05-30"",
-                        //                ""InboundDate"": ""2017-06-02"",
-                        //                ""LocationSchema"": ""Default"",
-                        //                ""CabinClass"": ""Economy"",
-                        //                ""GroupPricing"": false
-                        //                }
-                        //                }";
+
                         var transformer = new AdaptiveTransformer();
                         var cardJson = transformer.Transform(adaptiveCardTempalte, dataJson);
 
                         return new Attachment()
                         {
                             ContentType = AdaptiveCards.AdaptiveCard.ContentType,// "application/vnd.microsoft.card.adaptive",
-                            Content = cardJson,
+                            Content = JsonConvert.DeserializeObject(cardJson),
                         };
                     }
                 }

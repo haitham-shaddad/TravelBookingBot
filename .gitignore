@@ -348,3 +348,7 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+ 
+./TravelBookingBot/TravelBookingBot/appSettings.Development.json
+./TravelBookingBot/QnADemoBot/appSettings.Development.json
