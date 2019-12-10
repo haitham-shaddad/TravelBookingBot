@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29519.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelBookingBot", "TravelBookingBot\TravelBookingBot.csproj", "{2BA29933-3459-4D16-A844-510E061FB885}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelBookingBot", "TravelBookingBot\TravelBookingBot.csproj", "{2BA29933-3459-4D16-A844-510E061FB885}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QnADemoBot", "QnADemoBot\QnADemoBot.csproj", "{6DD7913B-61E8-454F-9E4E-7D03BD738001}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QnADemoBot", "QnADemoBot\QnADemoBot.csproj", "{6DD7913B-61E8-454F-9E4E-7D03BD738001}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalAIBootCamp", "GlobalAIBootCamp\GlobalAIBootCamp.csproj", "{4939FE54-8CE1-4657-987C-EA350B59C5B3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{6DD7913B-61E8-454F-9E4E-7D03BD738001}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6DD7913B-61E8-454F-9E4E-7D03BD738001}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6DD7913B-61E8-454F-9E4E-7D03BD738001}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4939FE54-8CE1-4657-987C-EA350B59C5B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4939FE54-8CE1-4657-987C-EA350B59C5B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4939FE54-8CE1-4657-987C-EA350B59C5B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4939FE54-8CE1-4657-987C-EA350B59C5B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
